@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <script src="../js/angular.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body ng-app="myApp">
+  <h2 class="text-center font-weight-bold text-primary text-uppercase">danh mục sản phẩm</h2>
+  <div ng-controller="myController">
+    <div class="row d-flex" style="margin-left: 10px; margin-right: 10px">
+      <div class="col-sm-3" ng-repeat="p in products">
+        <div class="card text-center mt-2 mb-2">
+          <div class="card-header">
+            <strong>{{p.name}}</strong>
+          </div>
+          <div class="card-body">
+            <img src="../images/{{p.image}}" alt="" class=" img-thumbnail img-fluid">
+          </div>
+          <div class="card-footer text-muted">
+            <span>{{p.price | currency: 'VNĐ '}}</span>
+            <a href="#" class="stretched-link"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/popper.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+</body>
+<script>
+  var app = angular.module("myApp", []);
+  app.controller("myController", function ($scope) {
+    $scope.products = [{
+        name: "Sausung galaxy Tab A",
+        image: "1.png",
+        price: 1000
+      },
+      {
+        name: "Máy tính kbảng Mobell",
+        image: "2.png",
+        price: 1500
+      },
+      {
+        name: "Điện thoại Iphone 8",
+        image: "3.png",
+        price: 2000
+      },
+      {
+        name: "Điện thoại BlackBarry",
+        image: "5.png",
+        price: 2000
+      },
+      {
+        name: "Điện thoại Realme 5",
+        image: "6.png",
+        price: 1700
+      },
+      {
+        name: "Điện thoại Nokia 3.2",
+        image: "7.png",
+        price: 2000
+      },
+      {
+        name: "Điện thoại Nokia 3.2",
+        image: "8.png",
+        price: 1300
+      }, {
+        name: "Điện thoại Nokia 3.2",
+        image: "4.png",
+        price: 3000
+      },
+    ];
+  });
+</script>
+
+</html>

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <script src="../js/angular.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body ng-app="myApp">
+  <div ng-controller="myController">
+    <div class="container-fluid">
+      <header class="row bg-primary"> HEADER </header>
+      <nav class="row navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Trang chủ<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item" ng-repeat="tl in listtheloai | filter:{lang:'vi',AnHien:1}">
+              <a class="nav-link" href="#">{{tl.TenTL}}</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="row">
+        <article class="col-9 pr-0 pl-0">
+          <div class="card">
+            <div class="card-header text-uppercase bg-warning">
+              tin thể thao
+            </div>
+            <div class="card-body">
+              <table class="table">
+                <tr ng-repeat="row in listtin | orderBy: '-Xem'| limitTo:3:start">
+                  <td>
+                    <p><strong>{{row.TieuDe}}</strong> <em>(Xem: {{row.Xem}})</em></p>
+                    <span>Ngày đăng: <em>{{row.Ngay}}</em></span>
+                    <div>{{row.TomTat}}</div>
+                  </td>
+                </tr>
+                <tr class="d-flex justify-content-around">
+                  <td><button ng-click="lui()" ng-disabled="start == 0" class="btn btn-primary"><i
+                        class="fa fa-arrow-left" aria-hidden="true"></i></button></td>
+                  <td><button ng-click="tiep()" ng-disabled="start == last" class="btn btn-primary"><i
+                        class="fa fa-arrow-right" aria-hidden="true"></i></button></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </article>
+        <aside class="col-3 bg-warning">RIGHT</aside>
+      </div>
+      <footer class="row bg-dark text-white text-center">
+        <div class="col-12 pt-2">Họ tên: <span class="font-weight-bold">Dương Huy Phi</span></div>
+        <div class="col">Email: <span class="font-weight-bold">phidhps18381&commat;fpt.edu.vn</span></div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/popper.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+</body>
+<script src="../js/theloai.js"></script>
+<script src="../js/songdep.js"></script>
+<script>
+  var app = angular.module("myApp", []);
+  app.controller("myController", myfunc);
+
+  function myfunc($scope) {
+    $scope.listtheloai = theloai;
+    $scope.listtin = list;
+    $scope.start = 0;
+    $scope.last = list.length - 3;
+    $scope.tiep = function () {
+      $scope.start += 3;
+    }
+    $scope.lui = function () {
+      $scope.start -= 3;
+    }
+  }
+</script>
+
+</html>

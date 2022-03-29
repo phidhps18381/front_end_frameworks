@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <script src="../js/angular.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/index.css">
+</head>
+
+<body ng-app="myApp">
+  <div ng-controller="myctrl">
+    <div class="col-8 m-auto">
+      <div class="card mt-2">
+        <div class="card-header text-uppercase bg-primary text-light font-weight-bold">
+          <i class="fa fa-list" aria-hidden="true"></i> form thông tin sinh viên
+        </div>
+        <div class="card-body">
+          <div class="form-group">
+            <label for="usr">Họ tên sinh viên:</label>
+            <div class="input-group">
+              <input type="text" class="form-control" id="usr" ng-model="student.fullname"
+                aria-describedby="basic-addon2" placeholder="Họ tên đầy đủ">
+              <div class="input-group-append">
+                <span class="input-group-text" id="basic-addon2"><i class="fa fa-user" aria-hidden="true"></i></span>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="date">Ngày sinh:</label>
+            <div class="input-group">
+              <input type="text" class="form-control" id="date" ng-model="student.birthday" placeholder="dd/mm/yyyy">
+              <div class="input-group-append">
+                <span class="input-group-text" id="basic-addon2"><i class="fa fa-calendar"
+                    aria-hidden="true"></i></span>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="mark">Điểm:</label>
+            <div class="input-group">
+              <input type="text" class="form-control" id="mark" ng-model="student.mark" placeholder="0.0 đến 10.0">
+              <div class="input-group-append">
+                <span class="input-group-text" id="basic-addon2"><i class="fa fa-pencil" aria-hidden="true"></i></span>
+              </div>
+            </div>
+          </div>
+          <div class="form-inline d-flex justify-content-between">
+            <button class="btn btn-primary text-uppercase" ng-click="insert()"><i class="fa fa-address-book"
+                aria-hidden="true"></i>
+              Thêm</button>
+            <button class="btn btn-warning text-uppercase ml-2" ng-click="update()"><i class="fa fa-pencil-square-o"
+                aria-hidden="true"></i>
+              Cập nhật</button>
+            <button class="btn btn-info text-uppercase ml-2" ng-click="delete()"><i class="fa fa-floppy-o"
+                aria-hidden="true"></i>
+              Xóa</button>
+            <button class="btn btn-dark text-uppercase ml-2" ng-click="cancel()">Bỏ qua</button>
+            <button class="btn btn-success text-uppercase ml-2" ng-click="clear()"><i class="fa fa-window-close"
+                aria-hidden="true"></i>
+              Làm mới</button>
+          </div>
+        </div>
+        <div class="card-footer text-muted font-italic d-flex justify-content-end">
+          Chú ý: nhập điểm là số từ 0 - 10, ngày dd/mm/yyyy
+        </div>
+      </div>
+    </div>
+    <div class="col-10 m-auto">
+      <table class="table mt-3 text-center">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Họ tên</th>
+            <th scope="col">Ngày sinh</th>
+            <th scope="col">Điểm</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat=" sv in students">
+            <td>{{sv.fullname}}</td>
+            <td>{{sv.birthday}}</td>
+            <td>{{sv.mark}}</td>
+            <td><button type="button" class="btn btn-link bg-primary text-light" ng-click="edit($index)">Chỉnh</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/popper.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+</body>
+<script>
+  var app = angular.module("myApp", []);
+  app.controller("myctrl", function ($scope) {
+    $scope.students = [{
+        fullname: "Hứa Hoài",
+        birthday: "5/02/1998",
+        mark: 6.5
+      },
+      {
+        fullname: "Đào Được Vàng",
+        birthday: "5/5/2000",
+        mark: 8
+      },
+      {
+        fullname: "Lâm Vân Vân",
+        birthday: "2/04/2001",
+        mark: 7.5
+      },
+      {
+        fullname: "Mai Anh Tới",
+        birthday: "19/1/1999",
+        mark: 6
+      },
+    ];
+    $scope.student = {};
+    $scope.index = -1;
+    $scope.edit = function (chiso) {
+      $scope.index = chiso;
+      $scope.student = angular.copy($scope.students[chiso]);
+    }
+    $scope.update = function () {
+      $scope.students[$scope.index] = angular.copy($scope.student);
+    }
+    $scope.clear = function () {
+      $scope.student = {};
+      $scope.index = -1;
+    }
+    $scope.insert = function () {
+      $scope.students.push(angular.copy($scope.student));
+      $scope.clear();
+    }
+    $scope.cancel = function () {
+      if ($scope.index == -1) $scope.clear();
+      else $scope.edit($scope.index);
+    }
+    $scope.delete = function () {
+      $scope.students.splice($scope.index, 1);
+      $scope.clear();
+    }
+  });
+</script>
+
+</html>
