@@ -1,0 +1,37 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Head */
+header {
+    background-color: #ee4d2d;
+}
+
+/* Nav */
+nav.row {
+    height: 60px;
+    background-color: yellow;
+}
+
+div .body1 {
+    background-color: rgb(245, 245, 245);
+    height: 800px;
+}
+
+.row>article {
+    min-height: 300px;
+}
+
+form div.form-group {
+    margin-top: 10px;
+}
+
+.row>aside {
+    min-height: 300px;
+}
+
+/* Footer */
+footer {
+    height: 50px;
+    background-color: grey;
+}

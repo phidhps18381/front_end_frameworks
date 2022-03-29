@@ -1,0 +1,39 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Head */
+header {
+    background-color: #ee4d2d;
+}
+
+/* Nav */
+nav.row {
+    height: 60px;
+    background-color: yellow;
+}
+
+div .body1 {
+    background-color: rgb(245, 245, 245);
+    height: 800px;
+}
+
+.row>article {
+    min-height: 300px;
+}
+
+div.card {
+    width: 40rem;
+}
+
+.navigate button {
+    width: 70px;
+    border-radius: 35px;
+    margin-right: 5px;
+}
+
+/* Footer */
+footer {
+    height: 50px;
+    background-color: grey;
+}

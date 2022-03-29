@@ -1,0 +1,16 @@
+body {
+    font-family: 'Times New Roman', Times, serif
+}
+
+label {
+    font-weight: bold;
+}
+
+div .head,
+div .foot {
+    background-color: #ee4d2d;
+}
+
+div .body{
+    background-color: #2deeaa;
+}

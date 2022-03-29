@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/angular.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        header {
+            height: 120px;
+            position: relative;
+        }
+
+        main {
+            min-height: 400px;
+        }
+
+        footer {
+            height: 150px;
+        }
+    </style>
+</head>
+
+<body ng-app="myApp">
+    <div ng-controller="myController">
+        <div class="container mt-3">
+            <header class="bg-info">
+                <div id="chao" class="d-flex justify-content-end pt-5 pr-3">Chào <p
+                        class="text-warning font-weight-bold pl-1">{{hoten}}</p>
+                </div>
+            </header>
+            <main class="bg-secondary"></main>
+            <footer class="bg-dark text-center pt-3 text-white">
+                <p>Họ tên: <strong class="text-danger">{{hoten}}</strong></p>
+                <p>Email: <strong class="text-primary">{{email}}</strong></p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+</body>
+<script>
+    var app = angular.module("myApp", []);
+    app.controller("myController", myfunc);
+
+    function myfunc($scope) {
+        var ht = sessionStorage.getItem("hoten");
+        if (ht != "") $scope.hoten = ht;
+        var email = sessionStorage.getItem("email");
+        if (email != "") $scope.email = email;
+    }
+</script>
+
+</html>

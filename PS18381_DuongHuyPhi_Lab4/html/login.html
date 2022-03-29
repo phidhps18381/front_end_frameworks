@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/angular.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body ng-app="dangnhap">
+    <div class="col-4 m-auto">
+        <div class="card mt-3 p-3">
+            <h4 class="text-center text-uppercase bg-primary text-light pt-2 pb-2">thành viên đăng nhập</h3>
+                <form ng-controller="frmdn">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Username</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" ng-model="u">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" ng-model="p">
+                    </div>
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Remember me?</label>
+                    </div>
+                    <button type="submit" class="btn btn-outline-primary" ng-click="dn()">Login</button>
+                </form>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+</body>
+<script src="../js/listsv.js"></script>
+<script>
+    var app = angular.module("dangnhap", []);
+    app.controller("frmdn", myfunc);
+
+    function myfunc($scope) {
+        $scope.dn = function () {
+            var u = $scope.u;
+            var p = $scope.p;
+            var tc = false;
+            var motsv;
+            for (var i = 0; i < listsv.length; i++) {
+                motsv = listsv[i];
+                if (u == motsv.username && p == motsv.password) {
+                    tc = true;
+                    break;
+                }
+            }
+            if (tc) {
+                sessionStorage.setItem("username", motsv.username);
+                sessionStorage.setItem("hoten", motsv.fullname);
+                sessionStorage.setItem("email", motsv.email);
+                document.location = "index.html";
+            } else {
+                alert("Đăng nhập thất bại")
+            }
+        }
+    }
+</script>
+
+</html>

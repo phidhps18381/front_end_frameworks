@@ -1,0 +1,63 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+header {
+    height: 200px;
+    background-color: #ee4d2d;
+}
+
+nav.row {
+    height: 60px;
+    background-color: yellow;
+}
+
+footer {
+    height: 50px;
+    background-color: grey;
+}
+
+div .body1 {
+    background-color: rgb(245, 245, 245);
+}
+
+.row>article {
+    min-height: 300px;
+}
+
+.row>aside {
+    min-height: 300px;
+}
+
+header {
+    position: relative;
+}
+
+.jumbotron {
+    color: white;
+    /* padding: 2rem 1rem;
+    background: #242134 linear-gradient(to right, #9E9AB4, #242134); */
+}
+
+.shopping-mall {
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    font-variant: small-caps;
+}
+
+.shopping-mall>h1 {
+    font-family: Impact;
+    font-size: 50px;
+    color: white;
+    letter-spacing: 0.3px;
+    text-shadow: 2px 2px 2px Oblack;
+    border-bottom: 1px dotted Ogrey;
+    padding-bottom: 0;
+    margin: 0;
+}
+
+.shopping-mall>h5 {
+    margin-top: 5px;
+    letter-spacing: 0.5px;
+}

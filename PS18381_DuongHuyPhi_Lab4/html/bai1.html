@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/angular.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body ng-app="myApp">
+    <div ng-controller="myController">
+        <h4>{{titleapp}}</h4>
+        <p>Tên đăng nhập: {{sv.username}}</p>
+        <p>Họ tên: {{sv.fullname}}</p>
+        <p> Email: {{sv.email}}</p>
+        <p>Phái: {{sv.gender}}</p>
+        <p>Ngày sinh: {{sv.birthday}}</p>
+        <p>Học phí: {{sv.schoolfee}}</p>
+        <p>Ðiểm: {{sv.marks}}</p>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+</body>
+<script>
+    var app = angular.module("myApp", []);
+    app.controller("myController", myfunc);
+
+    function myfunc($scope) {
+        $scope.titleapp = "THÔNG TIN SINH VIÊN";
+        $scope.sv = {
+            username: "teonv",
+            password: "iloveyou",
+            fullname: "Nguyễn Văn Tèo",
+            email: "teonv@fpt.edu.vn",
+            gender: "true",
+            birthday: "2020-12-21",
+            schoolfee: "1500000",
+            marks: "0"
+        }
+    }
+</script>
+
+</html>

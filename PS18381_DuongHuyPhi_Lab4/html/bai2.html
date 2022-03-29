@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/angular.min.js"></script>
+</head>
+
+<body ng-app="myApp">
+    <div class="col-6 m-auto text-center">
+        <div ng-controller="myController">
+            <div class="card mt-3 bg-danger">
+                <h3 ng-repeat="t in nhantu" class="mt-2 text-white">{{$index + 1}}. {{t}}</h3>
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+</body>
+<script>
+    var app = angular.module("myApp", []);
+    app.controller("myController", myfunc);
+
+    function myfunc($scope) {
+        $scope.nhantu = ["Nhường nhịn", "Khiêm tốn", "Trọng người", "Thương vật"];
+    }
+</script>
+
+</html>

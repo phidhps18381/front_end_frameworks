@@ -1,0 +1,46 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Head */
+header {
+    background-color: #ee4d2d;
+}
+
+/* Nav */
+nav.row {
+    height: 60px;
+    background-color: yellow;
+}
+
+div .body1 {
+    background-color: rgb(245, 245, 245);
+    height: 880px;
+}
+
+.row>article {
+    min-height: 300px;
+}
+
+.row .col .card {
+    width: 420px;
+    height: 357px;
+}
+
+.row .col .card .card-header {
+    background-color: #fff;
+}
+
+.row .col .card .card-img-top {
+    width: 65%;
+}
+
+.row>aside {
+    min-height: 300px;
+}
+
+/* Footer */
+footer {
+    height: 50px;
+    background-color: grey;
+}

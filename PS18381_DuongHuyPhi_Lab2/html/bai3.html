@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Lab2-Bai3</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+
+<body>
+    <div class="col-8 m-auto">
+        <ul class="nav nav-tabs text-uppercase font-weight-bold" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+                    aria-selected="true"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Cập nhật</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                    aria-controls="profile" aria-selected="false"><i class="fa fa-list" aria-hidden="true"></i> Danh
+                    sách</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <div class="card">
+                    <div class="card-header text-uppercase font-weight-bold head text-white">
+                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Nhập lương tháng 12
+                    </div>
+                    <div class="card-body body">
+                        <form>
+                            <div class="row">
+                                <div class="form-group col-6">
+                                    <label for="formGroupExampleInput">Mã nhân viên</label>
+                                    <input type="text" class="form-control" id="formGroupExampleInput"
+                                        placeholder="Nhập mã nhân viên">
+                                </div>
+                                <div class="form-group col-6">
+                                    <label for="formGroupExampleInput2">Họ và tên</label>
+                                    <input type="text" class="form-control" id="formGroupExampleInput2"
+                                        placeholder="Nhập họ và tên">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-6">
+                                    <label for="clb">Câu lạc bộ</label>
+                                    <select class="form-control" id="clb" placeholder="Chọn câu lạc bộ">
+                                        <option value="dn">Đà Nẵng</option>
+                                        <option value="hagl">Hoàng Anh Gia Lai</option>
+                                        <option value="hn">Hà Nội</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-6">
+                                    <label for="luong">Lương</label>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">VNĐ</span>
+                                        </div>
+                                        <input type="text" class="form-control" id="luong"
+                                            placeholder="Nhập lương cầu thủ">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">0.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-6">
+                                    <label for="thuong">Thưởng</label>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">VNĐ</span>
+                                        </div>
+                                        <input type="text" class="form-control" id="thuong"
+                                            placeholder="Nhập tiền thưởng">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">0.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group col-6">
+                                    <label for="phucap">Phụ cấp</label>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">VNĐ</span>
+                                        </div>
+                                        <input type="text" class="form-control" id="phucap"
+                                            placeholder="Nhập phu cấp (nếu có)">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">0.00</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div> <!-- row -->
+                            <div class="row">
+                                <div class="form group col-12">
+                                    <label for="ghichu">Ghi chú</label>
+                                    <textarea class="form-control" id="ghichu" placeholder="Nhập ghi chú - nếu có"
+                                        rows="3"></textarea>
+                                </div>
+                            </div> <!-- row -->
+                            <div class="row mt-3">
+                                <button class="btn btn-lg btn-warning ml-3 font-weight-bold" type="submit">
+                                    <i class="fa fa-floppy-o" aria-hidden="true"></i> &nbsp; LƯU &nbsp;
+                                </button>
+                                <button class="btn btn-lg btn-secondary ml-3 " type="reset">
+                                    <i class="fa fa-window-close" aria-hidden="true"></i> &nbsp; HỦY &nbsp;
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-footer font-weight-bold foot text-white">
+                        Vui lòng nhập thông tin lương của cầu thủ
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <table class="table table-bordered table-hover" aria-label="">
+                    <thead class="text-center bg-warning">
+                        <tr>
+                            <th scope="col" class="align-middle" rowspan="2">Mã NV</th>
+                            <th scope="col" class="align-middle" rowspan="2">Họ và tên</th>
+                            <th scope="col" class="align-middle" colspan="3">Thu nhập</th>
+                        </tr>
+                        <tr>
+                            <th scope="col">Lương</th>
+                            <th scope="col">Thưởng</th>
+                            <th scope="col">Phụ cấp</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">NV100</th>
+                            <td>Nguyễn Công Phượng</td>
+                            <td>5000000</td>
+                            <td>500000</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">NV101</th>
+                            <td>Phan Văn Tài Em</td>
+                            <td>9000000</td>
+                            <td>600000</td>
+                            <td>100000</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">NV102</th>
+                            <td>Lê Huỳnh Đức</td>
+                            <td>7000000</td>
+                            <td>300000</td>
+                            <td>200000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

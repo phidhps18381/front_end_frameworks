@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/angular.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body ng-app="myApp">
+    <div class="col-5 m-auto">
+        <div class="card mt-3">
+            <h3 class="text-center bg-primary text-light pt-2 pb-2">TÍNH DIỆN TÍCH CHU VI</h3>
+            <div ng-controller="myController">
+                <form class="pl-3 pr-3">
+                    <div class="form-group">
+                        <label>Chiều dài</label>
+                        <input type="number" ng-model="length" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label>Chiều rộng</label>
+                        <input type="number" ng-model="width" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label>Diện tích</label>
+                        <div class="form-control" ng-bind="acreage"></div>
+                    </div>
+                    <div class="form-group">
+                        <label>Chu vi</label>
+                        <div class="form-control" ng-bind="perimeter"></div>
+                    </div>
+                    <div class="form-group float-right">
+                        <button class="btn btn-outline-info" ng-click="tinhtoan()">Tính toán</button>
+                        <button class="btn btn-outline-danger" ng-click="choso()">Cho số</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    var app = angular.module("myApp", []);
+    app.controller("myController", myfunc);
+
+    function myfunc($scope) {
+        $scope.tinhtoan = function () {
+            var a = parseInt($scope.width);
+            var b = parseInt($scope.length);
+            $scope.acreage = a * b;
+            $scope.perimeter = (a + b) * 2;
+        }
+        $scope.choso = function () {
+            var w1 = Math.round(Math.random() * 100);
+            var w2 = Math.round(Math.random() * 100);
+            $scope.width = w1;
+            $scope.length = w2;
+        }
+    }
+</script>
+
+</html>

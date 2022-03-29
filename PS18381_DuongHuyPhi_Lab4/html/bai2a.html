@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/angular.min.js"></script>
+</head>
+
+<body ng-app="myApp">
+    <div class="m-auto text-center">
+        <div ng-controller="myController">
+            <table class="table table-bordered col-8 mx-auto mt-5 table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Username</th>
+                        <th scope="col">Mật khẩu</th>
+                        <th scope="col">Họ tên</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Phái</th>
+                        <th scope="col">Học phí</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="u in users">
+                        <th scope="row">{{$index + 1}}</th>
+                        <td>{{u.username}}</td>
+                        <td>{{u.password}}</td>
+                        <td>{{u.fullname}}</td>
+                        <td>{{u.email}}</td>
+                        <td>{{u.gender}}</td>
+                        <td>{{u.schoolfee}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+</body>
+<script>
+    var app = angular.module("myApp", []);
+    app.controller("myController", myfunc);
+
+    function myfunc($scope) {
+        $scope.users = [{
+                "username": "teonv",
+                "password": "iloveyou",
+                "fullname": "Nguyễn Vän Tèo",
+                "email": "teonv@fpt.edu.vn",
+                "gender": "true",
+                "birthday": "1995-12-21",
+                "schoolfee": "1500000",
+                "marks": "0"
+            },
+            {
+                "username": "pheonv",
+                "password": "iloveyou",
+                "fullname": "Nguyễn Văn Chí Phèo",
+                "email": "pheonv@fpt.edu.vn",
+                "gender": "true",
+                "birthday": "1985-10-11",
+                "schoolfee": "2500000",
+                "marks": "0"
+            },
+            {
+                "username": "nopt",
+                "password": "iloveyou",
+                "fullname": "Phạm Thị Nở",
+                "email": "nopt@fpt.edu.vn",
+                "gender": "false",
+                "birthday": "1993-05-15",
+                "schoolfee": "2000000",
+                "marks": "0"
+            }
+        ];
+    }
+</script>
+
+</html>
